@@ -16,10 +16,9 @@ const getData = async() => {
 
   try {
     const {data} = await axios.get(`https://pokeapi.co/api/v2/pokemon/${route.params.name}`)
-    pokemon.value = data
+      pokemon.value = data
   } catch (error) {
-    message.value = 'No se pudieron cargar los datos del servidor'
-    pokemon.value = {}
+      message.value = 'No se pudieron cargar los datos del servidor'
   } finally{
     loading.value = false
   }
